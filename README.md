@@ -19,8 +19,9 @@ This is a sample automation suite for Java `1.8`, Maven `3.*`, JUnit `5.*` and S
    mvn dependency:resolve
    ```
 3. Add a system variable for Allure that generates a better report `.allure\allure-*\bin`
-4. Fill `src\main\resources\prod.properties` if you are going to run tests on a production environment and `src\main\resources\test.properties` if you are going to run tests on a test environment. 
-`mailBox.password` is not a regular Gmail password, it's a custom password for application (for more info )
+4. Fill `src\main\resources\prod.properties` if you are going to run tests on a production environment, and `src\main\resources\test.properties` for a test environment. 
+`src\main\resources\sample.properties` is just an example with the list of all supported properties. 
+`mailBox.password` property is not a regular Gmail password, it's a custom password for application (see https://support.google.com/accounts/answer/185833?hl=en)
 
 
 ## Usage on Windows
