@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import javax.mail.MessagingException;
 
-
 public class BaseTestForNotAuthorized extends BaseTest {
 
     @RegisterExtension
@@ -16,9 +15,9 @@ public class BaseTestForNotAuthorized extends BaseTest {
     @BeforeAll
     public static void beforeAllForNotAuthorizedUser() throws MessagingException {
         BaseTest.logger.debug("beforeAllForNotAuthorizedUser");
-        emailOfUserWithoutWS = new Email(Globals.USER_WITHOUT_WS, Email.EmailFolder.INBOX);
-        emailOfUserWithEmptyWS = new Email(Globals.USER_WITH_EMPTY_WS, Email.EmailFolder.INBOX);
-        emailOfUserWithNotEmptyWS = new Email(Globals.USER_WITH_NOT_EMPTY_WS, Email.EmailFolder.INBOX);
+        emailOfUserWithoutWS = new EmailUtils(Globals.USER_WITHOUT_WS, EmailUtils.EmailFolder.INBOX);
+        emailOfUserWithEmptyWS = new EmailUtils(Globals.USER_WITH_EMPTY_WS, EmailUtils.EmailFolder.INBOX);
+        emailOfUserWithNotEmptyWS = new EmailUtils(Globals.USER_WITH_NOT_EMPTY_WS, EmailUtils.EmailFolder.INBOX);
     }
 
 }

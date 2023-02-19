@@ -14,7 +14,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 
-
 public class WatcherForNotAuthorizedUser implements TestWatcher, BeforeEachCallback {
     static public String path;
 

@@ -9,9 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Optional;
 
-
 public class WatcherForAuthorizedUser implements TestWatcher {
-
     static public String path;
 
     public WatcherForAuthorizedUser(String path) {

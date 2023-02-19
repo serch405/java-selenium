@@ -2,8 +2,8 @@ package tests.landing;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pages.landing.CmdProductPage;
-import pages.landing.LandingPage;
+import pageobject.landing.CmdProductPage;
+import pageobject.landing.LandingPage;
 import tests.BaseTestForNotAuthorized;
 
 

@@ -4,5 +4,5 @@ target
 allure-report
 allure-results
 *.iml
-src/main/resources/prod.properties
-src/main/resources/test.properties
+src/test/resources/prod.properties
+src/test/resources/test.properties
