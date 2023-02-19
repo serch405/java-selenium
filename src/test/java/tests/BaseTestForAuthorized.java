@@ -11,9 +11,7 @@ import pages.my.LoginPage;
 import javax.mail.MessagingException;
 import java.time.Duration;
 
-
 public class BaseTestForAuthorized extends BaseTest {
-
     public static DashboardPage dashboardPage;
 
     @RegisterExtension

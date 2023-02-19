@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import javax.mail.MessagingException;
 
-
 public class BaseTestForNotAuthorized extends BaseTest {
 
     @RegisterExtension
