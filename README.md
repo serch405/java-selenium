@@ -1,12 +1,12 @@
 <a name="readme-top"></a>
 # About the project
-This is a sample automation suite for Java `1.8`, Maven `3.*`, JUnit `5.*` and Selenium WebDriver 
+This is a sample automation suite for Java `1.8`, Maven `3.8.6`, JUnit `5.9.0` and Selenium WebDriver 
 
 
 ## Prerequisites
 1. Install JDK `1.8`
-2. Install Maven `3.*`
-3. Install Git
+2. Install Maven `3.8.6`
+3. Make sure Java and Maven are accessible from any folder
 
 
 ## Installation
@@ -14,12 +14,8 @@ This is a sample automation suite for Java `1.8`, Maven `3.*`, JUnit `5.*` and S
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
-2. Update Maven dependencies either from IDE or a command line
-   ```sh
-   mvn dependency:resolve
-   ```
-3. Add a system variable for Allure that generates a better report `.allure\allure-*\bin`
-4. Fill `src\main\resources\prod.properties` if you are going to run tests on a production environment, and `src\main\resources\test.properties` for a test environment. 
+2. Add a system variable for Allure that generates a better report `.allure\allure-*\bin`
+3. Fill `src\main\resources\prod.properties` if you are going to run tests on a production environment, and `src\main\resources\test.properties` for a test environment. 
 `src\main\resources\sample.properties` is just an example with the list of all supported properties. 
 `mailBox.password` property is not a regular Gmail password, it's a custom password for application (see https://support.google.com/accounts/answer/185833?hl=en)
 
@@ -27,27 +23,27 @@ This is a sample automation suite for Java `1.8`, Maven `3.*`, JUnit `5.*` and S
 ## Usage on Windows
 All listed commands should be executed from the project folder. Run all tests:
    ```sh
-   mvn test
+   mvn clean test
    ```
 Run all tests of class:
    ```sh
-   mvn -Dtest=class_name test
+   mvn clean test -Dtest=class_name
    ```
 Run a specific test of class:
    ```sh
-   mvn -Dtest=class_name#test_name test
+   mvn clean test -Dtest=class_name#test_name
    ```
 By default tests use Chrome driver, but you can run them using Chrome headless inside, just pass an additional argument: 
    ```sh
-   mvn test -Dbrowser=chromeHeadless
+   mvn clean test -Dbrowser=chromeHeadless
    ```
 By default tests use Production environment, but you can run them on Test environment instead, just pass an additional argument
    ```sh
-   mvn test -Denvironment=test
+   mvn clean test -Denvironment=test
    ```
 You might need to use `install` instead of `test` if update of dependencies is required before test execution:
    ```sh
-   mvn install
+   mvn clean install
    ```
 Allure reports can be generated either using Surefire results `target\surefire-reports` or its own `allure-results` 
    ```sh
