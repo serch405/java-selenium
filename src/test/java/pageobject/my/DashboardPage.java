@@ -1,6 +1,6 @@
-package pages.my;
+package pageobject.my;
 
-import helpers.SeleniumAddition;
+import helpers.WebDriverActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -18,7 +18,7 @@ public class DashboardPage extends BasePageForMyAuthorized {
     }
 
     public Boolean isAddDeviceBtnShown() {
-        return SeleniumAddition.waitUntilElementIsVisible(driver, addDeviceBtn);
+        return WebDriverActions.waitUntilElementIsVisible(driver, addDeviceBtn);
     }
 
 }

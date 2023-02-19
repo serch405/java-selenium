@@ -1,4 +1,4 @@
-package pages.landing;
+package pageobject.landing;
 
 import org.openqa.selenium.By;
 

@@ -1,6 +1,6 @@
-package pages.landing;
+package pageobject.landing;
 
-import helpers.SeleniumAddition;
+import helpers.WebDriverActions;
 import org.openqa.selenium.By;
 
 public class BusinessProductPage extends BasePageForLanding {
@@ -48,11 +48,11 @@ public class BusinessProductPage extends BasePageForLanding {
     }
 
     public Boolean isMenuItemShownAsActive(By by) {
-        return SeleniumAddition.waitUntilElementAttributeContains(driver, by, "class", "active");
+        return WebDriverActions.waitUntilElementAttributeContains(driver, by, "class", "active");
     }
 
     public Boolean isHeaderDisplayed(By by) {
-        return SeleniumAddition.waitUntilElementIsVisible(driver, by);
+        return WebDriverActions.waitUntilElementIsVisible(driver, by);
     }
 
     public Boolean verifyIfNavigationMenuWorks() {

@@ -3,7 +3,7 @@ package helpers;
 import java.io.File;
 import java.time.Instant;
 
-public class DownloadFolder {
+public class FileUtils {
     public static File dir = new File(System.getProperty("user.home") + "/Downloads/");
 
     public static File getFile(String name) {
@@ -58,15 +58,15 @@ public class DownloadFolder {
         int maxTimeInSeconds = seconds;
         Instant deadline = Instant.now().plusSeconds(maxTimeInSeconds);
         Thread.sleep(500);
-        Long fileSize1 = DownloadFolder.getLatestModifiedFile().length();
+        Long fileSize1 = FileUtils.getLatestModifiedFile().length();
         Thread.sleep(500);
-        Long fileSize2 = DownloadFolder.getLatestModifiedFile().length();
+        Long fileSize2 = FileUtils.getLatestModifiedFile().length();
 
         while (Instant.now().isBefore(deadline)) {
             if (!fileSize1.equals(fileSize2)) {
                 Thread.sleep(500);
                 fileSize1 = fileSize2;
-                fileSize2 = DownloadFolder.getLatestModifiedFile().length();
+                fileSize2 = FileUtils.getLatestModifiedFile().length();
                 continue;
             }
 

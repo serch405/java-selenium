@@ -6,12 +6,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-public class EnvironmentPropertiesReader {
+public class ProjectEnvironmentProperties {
     private Properties properties;
     private String environmentPropertyFolderPath = "src/test/resources/";
     private String environmentPropertyFilePath;
 
-    public EnvironmentPropertiesReader() {
+    public ProjectEnvironmentProperties() {
 
         switch(Globals.ENVIRONMENT) {
             case PROD : environmentPropertyFilePath = environmentPropertyFolderPath + "prod.properties";

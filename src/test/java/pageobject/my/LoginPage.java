@@ -1,7 +1,7 @@
-package pages.my;
+package pageobject.my;
 
-import helpers.SeleniumAddition;
-import helpers.Email;
+import helpers.WebDriverActions;
+import helpers.EmailUtils;
 import helpers.UserModel;
 import org.openqa.selenium.By;
 import javax.mail.MessagingException;
@@ -18,19 +18,19 @@ public class LoginPage extends BasePageForMy {
     }
 
     public void typeEmail(String email) {
-        SeleniumAddition.clearAndSendKeys(driver, emailInput, email);
+        WebDriverActions.clearAndSendKeys(driver, emailInput, email);
     }
 
     public void typePassword(String password) {
-        SeleniumAddition.clearAndSendKeys(driver, passwordInput, password);
+        WebDriverActions.clearAndSendKeys(driver, passwordInput, password);
     }
 
     public void typeCode(String code) {
-        SeleniumAddition.clearAndSendKeys(driver, codeInput, code);
+        WebDriverActions.clearAndSendKeys(driver, codeInput, code);
     }
 
     public Boolean isLoginButtonShown() {
-        return SeleniumAddition.waitUntilElementIsVisible(driver, this.loginBtn);
+        return WebDriverActions.waitUntilElementIsVisible(driver, this.loginBtn);
     }
 
     public LoginPage loginFailedCredentials(UserModel user) {
@@ -44,18 +44,18 @@ public class LoginPage extends BasePageForMy {
         this.typeEmail(user.gmailEmail);
         this.typePassword(user.myPassword);
         driver.findElement(loginBtn).click();
-        SeleniumAddition.waitUntilElementIsVisible(driver, this.codeInput);
+        WebDriverActions.waitUntilElementIsVisible(driver, this.codeInput);
         this.typeCode("123456");
         driver.findElement(loginBtn).click();
         return this;
     }
 
-    public DashboardPage login(UserModel user, Email email) throws MessagingException, InterruptedException {
-        email.setAllMessagesAsRead();
+    public DashboardPage login(UserModel user, EmailUtils emailUtils) throws MessagingException, InterruptedException {
+        emailUtils.setAllMessagesAsRead();
         this.typeEmail(user.gmailEmail);
         this.typePassword(user.myPassword);
         driver.findElement(loginBtn).click();
-        this.typeCode(email.getCode());
+        this.typeCode(emailUtils.getCode());
         driver.findElement(loginBtn).click();
         return new DashboardPage(driver);
     }

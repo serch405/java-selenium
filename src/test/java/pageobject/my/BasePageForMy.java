@@ -1,9 +1,9 @@
-package pages.my;
+package pageobject.my;
 
-import helpers.SeleniumAddition;
+import helpers.WebDriverActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.BasePage;
+import pageobject.BasePage;
 
 public class BasePageForMy extends BasePage {
     private By toastMessage = By.className("dx-overlay-content");
@@ -13,7 +13,7 @@ public class BasePageForMy extends BasePage {
     }
 
     public Boolean waitUntilToastMessageAppear() {
-        return SeleniumAddition.waitUntilElementIsVisible(driver, toastMessage);
+        return WebDriverActions.waitUntilElementIsVisible(driver, toastMessage);
     }
 
     public String getToastMessageText() {

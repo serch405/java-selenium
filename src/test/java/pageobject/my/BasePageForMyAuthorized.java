@@ -1,11 +1,11 @@
-package pages.my;
+package pageobject.my;
 
-import helpers.SeleniumAddition;
+import helpers.WebDriverActions;
 import org.openqa.selenium.WebDriver;
-import pages.my.components.Breadcrumb;
-import pages.my.components.OverlayModal;
-import pages.my.components.Sidebar;
-import pages.my.components.UserMenu;
+import pageobject.my.components.Breadcrumb;
+import pageobject.my.components.OverlayModal;
+import pageobject.my.components.Sidebar;
+import pageobject.my.components.UserMenu;
 
 
 public class BasePageForMyAuthorized extends BasePageForMy {
@@ -24,8 +24,8 @@ public class BasePageForMyAuthorized extends BasePageForMy {
     }
 
     protected void waitUntilPageIsLoaded() {
-        SeleniumAddition.waitUntilElementIsVisible(driver, sidebar.workspacesItem);
-        SeleniumAddition.waitUntilElementIsVisible(driver, userMenu.username);
+        WebDriverActions.waitUntilElementIsVisible(driver, sidebar.workspacesItem);
+        WebDriverActions.waitUntilElementIsVisible(driver, userMenu.username);
     }
 
 }

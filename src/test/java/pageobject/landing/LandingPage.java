@@ -1,9 +1,9 @@
-package pages.landing;
+package pageobject.landing;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.my.LoginPage;
+import pageobject.my.LoginPage;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;

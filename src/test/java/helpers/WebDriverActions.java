@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class SeleniumAddition {
+public class WebDriverActions {
 
     public static void clearAndSendKeys(WebDriver driver, By by, String value) {
         driver.findElement(by).clear();

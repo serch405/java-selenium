@@ -1,12 +1,11 @@
-package pages.landing;
+package pageobject.landing;
 
 import org.openqa.selenium.By;
 
-
-public class HomeProductDownloadPage extends BasePageForLanding {
+public class BusinessProductDownloadPage extends BasePageForLanding {
     private By altInstallationOptionsLink = By.xpath("//a[contains(text(), 'Web installer')]");
 
-    public HomeProductDownloadPage() {
+    public BusinessProductDownloadPage() {
         super(driver);
     }
 

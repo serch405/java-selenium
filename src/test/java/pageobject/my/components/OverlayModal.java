@@ -1,9 +1,9 @@
-package pages.my.components;
+package pageobject.my.components;
 
-import helpers.SeleniumAddition;
+import helpers.WebDriverActions;
 import org.openqa.selenium.By;
-import pages.Base;
-import pages.my.DashboardPage;
+import pageobject.Base;
+import pageobject.my.DashboardPage;
 
 
 public class OverlayModal extends Base {
@@ -17,23 +17,23 @@ public class OverlayModal extends Base {
     }
 
     public Boolean waitUntilOverlayModalAppear() {
-        return SeleniumAddition.waitUntilElementIsVisible(driver, this.overlayModal);
+        return WebDriverActions.waitUntilElementIsVisible(driver, this.overlayModal);
     }
 
     public Boolean waitUntilOverlayModalDisappear() {
-        return SeleniumAddition.waitUntilElementIsInvisible(driver, this.overlayModal);
+        return WebDriverActions.waitUntilElementIsInvisible(driver, this.overlayModal);
     }
 
     public Boolean isOverlayModalShown() {
-        return SeleniumAddition.waitUntilElementIsVisible(driver, this.overlayModal);
+        return WebDriverActions.waitUntilElementIsVisible(driver, this.overlayModal);
     }
 
     public Boolean isCloseIconShown() {
-        return SeleniumAddition.waitUntilElementIsVisible(driver, this.closeIcon);
+        return WebDriverActions.waitUntilElementIsVisible(driver, this.closeIcon);
     }
 
     public Boolean isCloseIconClickable() {
-        return SeleniumAddition.waitUntilElementIsClickable(driver, this.closeIcon);
+        return WebDriverActions.waitUntilElementIsClickable(driver, this.closeIcon);
     }
 
     public DashboardPage close() {
@@ -43,11 +43,11 @@ public class OverlayModal extends Base {
 
     public String getTitle() {
 
-        if (SeleniumAddition.waitUntilElementIsVisible(driver, this.createWorkspaceTitle)) {
+        if (WebDriverActions.waitUntilElementIsVisible(driver, this.createWorkspaceTitle)) {
             return driver.findElement(this.createWorkspaceTitle).getText();
         }
 
-        if (SeleniumAddition.waitUntilElementIsVisible(driver, this.addDeviceTitle)) {
+        if (WebDriverActions.waitUntilElementIsVisible(driver, this.addDeviceTitle)) {
             return driver.findElement(this.addDeviceTitle).getText();
         }
         return null;

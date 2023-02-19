@@ -1,12 +1,12 @@
-package pages.landing.components;
+package pageobject.landing.components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
-import pages.Base;
-import pages.landing.BusinessProductPage;
-import pages.landing.CmdProductPage;
-import pages.landing.HomeProductPage;
-import pages.my.LoginPage;
+import pageobject.Base;
+import pageobject.landing.BusinessProductPage;
+import pageobject.landing.CmdProductPage;
+import pageobject.landing.HomeProductPage;
+import pageobject.my.LoginPage;
 
 public class Header extends Base {
     public By emsiLogo = By.cssSelector("a.logo-emsisoft");

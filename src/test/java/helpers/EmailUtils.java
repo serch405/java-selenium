@@ -1,5 +1,7 @@
 package helpers;
 
+import tests.BaseTest;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,7 +17,7 @@ import javax.mail.Session;
 import javax.mail.Store;
 import javax.mail.search.SubjectTerm;
 
-public class Email {
+public class EmailUtils {
     private Folder folder;
 
     public enum EmailFolder {
@@ -30,7 +32,7 @@ public class Email {
         }
     }
 
-    public Email(UserModel user, EmailFolder emailFolder) throws MessagingException {
+    public EmailUtils(UserModel user, EmailFolder emailFolder) throws MessagingException {
         Session session = Session.getInstance(new Properties());
         Store store = session.getStore("imaps");
         store.connect(Globals.GMAIL_HOST, Globals.GMAIL_PORT, user.gmailEmail, user.gmailAppPassword);

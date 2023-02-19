@@ -1,9 +1,9 @@
-package pages.my.components;
+package pageobject.my.components;
 
-import helpers.SeleniumAddition;
+import helpers.WebDriverActions;
 import org.openqa.selenium.By;
-import pages.Base;
-import pages.my.LoginPage;
+import pageobject.Base;
+import pageobject.my.LoginPage;
 
 
 public class UserMenu extends Base {
@@ -24,7 +24,7 @@ public class UserMenu extends Base {
     }
 
     public Boolean waitUntilDropdownMenuIsShown() {
-        return SeleniumAddition.waitUntilElementIsVisible(driver, this.userDropdownMenu);
+        return WebDriverActions.waitUntilElementIsVisible(driver, this.userDropdownMenu);
     }
 
     public LoginPage logout() {

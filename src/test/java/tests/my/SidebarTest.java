@@ -1,7 +1,7 @@
 package tests.my;
 
 import org.junit.jupiter.api.*;
-import pages.my.GlobalIncidents;
+import pageobject.my.GlobalIncidents;
 import tests.BaseTestForAuthorized;
 
 

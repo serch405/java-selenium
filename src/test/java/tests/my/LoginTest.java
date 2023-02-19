@@ -2,9 +2,9 @@ package tests.my;
 
 import helpers.Globals;
 import org.junit.jupiter.api.*;
-import pages.landing.LandingPage;
-import pages.my.DashboardPage;
-import pages.my.LoginPage;
+import pageobject.landing.LandingPage;
+import pageobject.my.DashboardPage;
+import pageobject.my.LoginPage;
 import tests.BaseTestForNotAuthorized;
 import javax.mail.MessagingException;
 

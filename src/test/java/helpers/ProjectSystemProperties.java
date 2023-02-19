@@ -3,7 +3,7 @@ package helpers;
 import enums.Browser;
 import enums.Environment;
 
-public class SystemPropertiesReader {
+public class ProjectSystemProperties {
 
     public static Browser getBrowser() {
         String browser = System.getProperty("browser");

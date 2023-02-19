@@ -1,9 +1,9 @@
-package pages.landing;
+package pageobject.landing;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.BasePage;
-import pages.landing.components.Header;
+import pageobject.BasePage;
+import pageobject.landing.components.Header;
 
 public class BasePageForLanding extends BasePage {
     protected Header headerComponent;

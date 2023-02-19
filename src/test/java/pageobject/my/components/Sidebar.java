@@ -1,11 +1,11 @@
-package pages.my.components;
+package pageobject.my.components;
 
-import helpers.SeleniumAddition;
+import helpers.WebDriverActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.interactions.Actions;
-import pages.Base;
-import pages.my.GlobalIncidents;
+import pageobject.Base;
+import pageobject.my.GlobalIncidents;
 
 
 public class Sidebar extends Base {
@@ -24,7 +24,7 @@ public class Sidebar extends Base {
     }
 
     public Boolean isWorkspacesSublistExpended() {
-        return SeleniumAddition.waitUntilElementAttributeContains(driver, workspacesSublist, "style", "display: block;");
+        return WebDriverActions.waitUntilElementAttributeContains(driver, workspacesSublist, "style", "display: block;");
     }
 
 //    public void getWorkspacesSublistExpendIcon() {

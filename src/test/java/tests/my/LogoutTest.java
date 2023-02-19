@@ -2,7 +2,7 @@ package tests.my;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pages.my.LoginPage;
+import pageobject.my.LoginPage;
 import tests.BaseTest;
 import tests.BaseTestForAuthorized;
 

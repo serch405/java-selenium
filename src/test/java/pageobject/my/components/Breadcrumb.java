@@ -1,8 +1,8 @@
-package pages.my.components;
+package pageobject.my.components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import pages.Base;
+import pageobject.Base;
 import java.util.List;
 
 
