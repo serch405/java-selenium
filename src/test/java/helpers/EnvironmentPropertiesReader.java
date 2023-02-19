@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class EnvironmentPropertiesReader {
     private Properties properties;
-    private String environmentPropertyFolderPath = "src/main/resources/";
+    private String environmentPropertyFolderPath = "src/test/resources/";
     private String environmentPropertyFilePath;
 
     public EnvironmentPropertiesReader() {
