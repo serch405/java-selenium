@@ -2,6 +2,7 @@ package helpers;
 
 import java.io.File;
 import java.time.Instant;
+import java.util.Optional;
 
 public class FileUtils {
     public static File dir = new File(System.getProperty("user.home") + "/Downloads/");
@@ -23,8 +24,9 @@ public class FileUtils {
 
     public static boolean isFilePresented(String name) {
         File file = getFile(name);
+        Optional<File> opt = Optional.of(file);
 
-        if (file != null) {
+        if (opt.isPresent()) {
             return true;
         }
         return false;
@@ -32,8 +34,9 @@ public class FileUtils {
 
     public static void removeFile(String name) {
         File file = getFile(name);
+        Optional<File> opt = Optional.of(file);
 
-        if (file != null) {
+        if (opt.isPresent()) {
             file.delete();
         }
     }
