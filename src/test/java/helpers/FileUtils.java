@@ -55,18 +55,24 @@ public class FileUtils {
     }
 
     public static void waitUntilDownloadingIsFinished(int seconds) throws InterruptedException {
-        Instant deadline = Instant.now().plusSeconds(seconds);
-        Long fileSize = FileUtils.getLatestModifiedFile().length();
+        int maxTimeInSeconds = seconds;
+        Instant deadline = Instant.now().plusSeconds(maxTimeInSeconds);
+        Thread.sleep(500);
+        Long fileSize1 = FileUtils.getLatestModifiedFile().length();
+        Thread.sleep(500);
+        Long fileSize2 = FileUtils.getLatestModifiedFile().length();
 
         while (Instant.now().isBefore(deadline)) {
-            Thread.sleep(500);
-            if (!fileSize.equals(FileUtils.getLatestModifiedFile().length())) {
-                fileSize = FileUtils.getLatestModifiedFile().length();
+            if (!fileSize1.equals(fileSize2)) {
+                Thread.sleep(500);
+                fileSize1 = fileSize2;
+                fileSize2 = FileUtils.getLatestModifiedFile().length();
                 continue;
             }
+
+            Thread.sleep(3000); // extra delay is required for finalization of downloading
             break;
         }
-        Thread.sleep(3000); // extra delay is required for finalization of downloading
     }
 
 }
