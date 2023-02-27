@@ -1,16 +1,19 @@
 package helpers;
 
+import tests.BaseTest;
+
 import java.io.File;
 import java.time.Instant;
 import java.util.Optional;
 
 public class FileUtils {
-    public static File dir = new File(System.getProperty("user.home") + "/Downloads/");
+    public static File dir = new File(System.getProperty("user.home") + "/Downloads");
 
     public static File getFile(String name) {
         File[] files = dir.listFiles();
+        Optional<Integer> opt = Optional.of(files.length);
 
-        if (files == null || files.length == 0) {
+        if (opt.equals(0)) {
             return null;
         }
 
@@ -24,7 +27,7 @@ public class FileUtils {
 
     public static boolean isFilePresented(String name) {
         File file = getFile(name);
-        Optional<File> opt = Optional.of(file);
+        Optional<File> opt = Optional.ofNullable(file);
 
         if (opt.isPresent()) {
             return true;
@@ -34,7 +37,7 @@ public class FileUtils {
 
     public static void removeFile(String name) {
         File file = getFile(name);
-        Optional<File> opt = Optional.of(file);
+        Optional<File> opt = Optional.ofNullable(file);
 
         if (opt.isPresent()) {
             file.delete();
@@ -43,8 +46,9 @@ public class FileUtils {
 
     public static File getLatestModifiedFile() {
         File[] files = dir.listFiles();
+        Optional<Integer> opt = Optional.of(files.length);
 
-        if (files == null || files.length == 0) {
+        if (opt.equals(0)) {
             return null;
         }
         File lastModifiedFile = files[0];
