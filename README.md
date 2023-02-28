@@ -11,9 +11,6 @@ This is a sample automation suite for Java `1.8`, Maven `3.8.6`, JUnit `5.9.0` a
 
 ## Installation
 1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
 2. Add a system variable for Allure that generates a better report `.allure\allure-*\bin`
 3. Fill `src\main\resources\prod.properties` if you are going to run tests on a production environment, and `src\main\resources\test.properties` for a test environment. 
 `src\main\resources\sample.properties` is just an example with the list of all supported properties. 
@@ -37,7 +34,7 @@ By default tests use Chrome driver, but you can run them using Chrome headless i
    ```sh
    mvn clean test -Dbrowser=chromeHeadless
    ```
-By default tests use Production environment, but you can run them on Test environment instead, just pass an additional argument
+By default tests use Production environment, but you can run them on Test environment instead, just pass an additional argument:
    ```sh
    mvn clean test -Denvironment=test
    ```
@@ -45,7 +42,7 @@ You might need to use `install` instead of `test` if update of dependencies is r
    ```sh
    mvn clean install
    ```
-Allure reports can be generated either using Surefire results `target\surefire-reports` or its own `allure-results` 
+Allure reports can be generated either using Surefire results `target\surefire-reports` or its own `allure-results`:
    ```sh
    allure serve allure-results
    ```
