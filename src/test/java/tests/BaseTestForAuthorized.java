@@ -17,7 +17,6 @@ public class BaseTestForAuthorized extends BaseTest {
     @RegisterExtension
     WatcherForAuthorizedUser watcher = new WatcherForAuthorizedUser("target/surefire-reports");
 
-    @Order(2)
     @BeforeAll
     public static void beforeAllForAuthorizedUser() throws MessagingException, InterruptedException {
         BaseTest.logger.debug("beforeAllForAuthorizedUser");
