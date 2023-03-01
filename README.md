@@ -7,6 +7,7 @@ This is a sample automation suite for Java `1.8`, Maven `3.8.6`, JUnit `5.9.0` a
 1. Install JDK `1.8`
 2. Install Maven `3.8.6`
 3. Make sure Java and Maven are accessible from any folder
+4. Install the latest Chrome
 
 
 ## Installation
