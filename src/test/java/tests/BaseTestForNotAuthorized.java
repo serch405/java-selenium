@@ -11,7 +11,6 @@ public class BaseTestForNotAuthorized extends BaseTest {
     @RegisterExtension
     WatcherForNotAuthorizedUser watcher = new WatcherForNotAuthorizedUser("target/surefire-reports");
 
-    @Order(2)
     @BeforeAll
     public static void beforeAllForNotAuthorizedUser() throws MessagingException {
         BaseTest.logger.debug("beforeAllForNotAuthorizedUser");

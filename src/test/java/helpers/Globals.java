@@ -2,8 +2,10 @@ package helpers;
 
 import enums.Browser;
 import enums.Environment;
+import java.io.File;
 
 public class Globals {
+    public static final File DOWNLOAD_FOLDER = new File(System.getProperty("user.home") + "/Downloads");
     public static final Browser BROWSER = ProjectSystemProperties.getBrowser();
     public static final Environment ENVIRONMENT = ProjectSystemProperties.getEnvironment();
     public static final long WAIT = ProjectSystemProperties.getWait();

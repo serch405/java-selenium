@@ -7,10 +7,8 @@ import java.time.Instant;
 import java.util.Optional;
 
 public class FileUtils {
-    public static File dir = new File(System.getProperty("user.home") + "/Downloads");
-
     public static File getFile(String name) {
-        File[] files = dir.listFiles();
+        File[] files = Globals.DOWNLOAD_FOLDER.listFiles();
         Optional<Integer> opt = Optional.of(files.length);
 
         if (opt.equals(0)) {
@@ -45,7 +43,7 @@ public class FileUtils {
     }
 
     public static File getLatestModifiedFile() {
-        File[] files = dir.listFiles();
+        File[] files = Globals.DOWNLOAD_FOLDER.listFiles();
         Optional<Integer> opt = Optional.of(files.length);
 
         if (opt.equals(0)) {

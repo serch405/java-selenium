@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import enums.Browser;
+import java.io.File;
 
 public class DriverFactory {
 
@@ -17,14 +18,14 @@ public class DriverFactory {
         switch (browser) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
-                chromePrefs.put("download.default_directory", System.getProperty("user.home") + "\\Downloads\\");
+                chromePrefs.put("download.default_directory", Globals.DOWNLOAD_FOLDER.getPath());
                 chromePrefs.put("safebrowsing.enabled", true);
                 chromeOptions.setExperimentalOption("prefs", chromePrefs);
                 chromeOptions.addArguments("--window-size=1920,1080");
                 return new ChromeDriver(chromeOptions);
             case CHROME_HEADLESS:
                 WebDriverManager.chromedriver().setup();
-                chromePrefs.put("download.default_directory", System.getProperty("user.home") + "\\Downloads\\");
+                chromePrefs.put("download.default_directory", Globals.DOWNLOAD_FOLDER.getPath());
                 chromePrefs.put("safebrowsing.enabled", true);
                 chromeOptions.setExperimentalOption("prefs", chromePrefs);
                 chromeOptions.addArguments("--headless");
