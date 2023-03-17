@@ -11,6 +11,7 @@ public class ProjectSystemProperties {
 
         if (browser == null || browser.equalsIgnoreCase("chrome")) return Browser.CHROME;
         else if (browser.equalsIgnoreCase("chrome_headless")) return Browser.CHROME_HEADLESS;
+        else if (browser.equalsIgnoreCase("firefox")) return Browser.FIREFOX;
         else throw new RuntimeException("Can't parse Browser value: " + browser);
     }
 

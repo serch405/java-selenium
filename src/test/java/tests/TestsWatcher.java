@@ -16,6 +16,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 
+
 public class TestsWatcher implements TestWatcher, BeforeEachCallback, AfterEachCallback {
     static public String path;
 
@@ -61,7 +62,7 @@ public class TestsWatcher implements TestWatcher, BeforeEachCallback, AfterEachC
     @Override
     public void beforeEach(ExtensionContext extensionContext) throws MalformedURLException {
         BaseTest.logger.debug("beforeEach");
-        BaseTest.driver = DriverFactory.createDriver(Globals.BROWSER);
+        BaseTest.driver = DriverFactory.createDriver(Globals.BROWSER, Globals.ENVIRONMENT);
         BaseTest.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         BaseTest.driver.get(Globals.URL);
     }
