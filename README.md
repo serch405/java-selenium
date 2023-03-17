@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 # About the project
-This is a sample automation suite for Java `1.8`, Maven `3.8.6`, JUnit `5.9.0` and Selenium WebDriver 
+This is a sample automation suite for Java `1.8`, Maven `3.8.6`, JUnit `5.9.0` and Selenium WebDriver . Tests can be executed locally or in an isolated environment (Selenoid)
 
 
 ## Prerequisites
@@ -36,7 +36,7 @@ By default, tests use Chrome driver, but you can execute them using Chrome headl
    ```sh
    mvn clean test -Dbrowser=chromeHeadless
    ```
-By default, tests get executed locally, but you can execute them on an isolated environment (Selenoid), just pass an additional argument:
+By default, tests get executed locally, but you can execute them in an isolated environment (Selenoid), just pass an additional argument:
    ```sh
    mvn clean test -Denvironment=local_selenoid
    ```
