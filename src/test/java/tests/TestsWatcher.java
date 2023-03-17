@@ -3,6 +3,7 @@ package tests;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.Duration;
 import java.util.Optional;
 import helpers.DriverFactory;
@@ -58,7 +59,7 @@ public class TestsWatcher implements TestWatcher, BeforeEachCallback, AfterEachC
     }
 
     @Override
-    public void beforeEach(ExtensionContext extensionContext) {
+    public void beforeEach(ExtensionContext extensionContext) throws MalformedURLException {
         BaseTest.logger.debug("beforeEach");
         BaseTest.driver = DriverFactory.createDriver(Globals.BROWSER);
         BaseTest.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
