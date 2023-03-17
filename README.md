@@ -7,14 +7,15 @@ This is a sample automation suite for Java `1.8`, Maven `3.8.6`, JUnit `5.9.0` a
 1. Install JDK `1.8`
 2. Install Maven `3.8.6`
 3. Make sure Java and Maven are accessible from any folder
-4. Install the latest Chrome
+4. Install the latest Chrome and Firefox
+5. Install and run Docker and Selenoid following (see https://aerokube.com/selenoid/latest/#_getting_started)
 
 
 ## Installation
 1. Clone the repo
 2. Add a system variable for Allure that generates a better report `.allure\allure-*\bin`
-3. Add and fill `src\main\resources\configuration.properties` following `src\main\resources\sample_configuration.properties` as an example that contains all supported properties. 
-`mailBox.password` property is not a regular Gmail password, it's a custom password for application (see https://support.google.com/accounts/answer/185833?hl=en)
+3. Add and fill `src\main\resources\configuration.properties` following `src\main\resources\sample_configuration.properties` as an example that contains all supported properties.</br> 
+Note: `mailBox.password` is not a regular Gmail password, it's a custom password for application (see https://support.google.com/accounts/answer/185833?hl=en)
 
 
 ## Usage on Windows
