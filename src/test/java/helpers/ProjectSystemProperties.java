@@ -15,6 +15,12 @@ public class ProjectSystemProperties {
         else throw new RuntimeException("Can't parse Browser value: " + browser);
     }
 
+    public static String getBrowserVersion() {
+        String browserVersion = System.getProperty("browser_version");
+        if (browserVersion != null) return browserVersion;
+        return "latest";
+    }
+
     public static Environment getEnvironment() {
         String environment = System.getProperty("env");
 

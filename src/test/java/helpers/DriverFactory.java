@@ -60,12 +60,12 @@ public class DriverFactory {
         else if (environment.equals(Environment.SELENOID)) {
             if (chromeBrowser) {
                 capabilities.setBrowserName("chrome");
-                capabilities.setVersion("110.0");
+                capabilities.setVersion(Globals.BROWSER_VERSION);
                 capabilities.setCapability(ChromeOptions.CAPABILITY, browserOptions);
                 return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
             } else if (browser.equals(Browser.FIREFOX)) {
                 capabilities.setBrowserName("firefox");
-                capabilities.setVersion("110.0");
+                capabilities.setVersion(Globals.BROWSER_VERSION);
                 capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, browserOptions);
                 return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
             }

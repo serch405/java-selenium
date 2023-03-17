@@ -8,6 +8,7 @@ import java.io.File;
 public class Globals {
     public static final File DOWNLOAD_FOLDER = new File(System.getProperty("user.home") + "/Downloads");
     public static final Browser BROWSER = ProjectSystemProperties.getBrowser();
+    public static final String BROWSER_VERSION = ProjectSystemProperties.getBrowserVersion();
     public static final Environment ENVIRONMENT = ProjectSystemProperties.getEnvironment();
     public static final long WAIT = ProjectSystemProperties.getWait();
     public static ProjectEnvironmentProperties projectEnvironmentProperties = new ProjectEnvironmentProperties();
