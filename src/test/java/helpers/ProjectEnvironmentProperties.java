@@ -9,17 +9,9 @@ import java.util.Properties;
 
 public class ProjectEnvironmentProperties {
     private Properties properties;
-    private String environmentPropertyFolderPath = "src/test/resources/";
-    private String environmentPropertyFilePath;
+    private String environmentPropertyFilePath = "src/test/resources/configuration.properties";
 
     public ProjectEnvironmentProperties() {
-
-        switch(Globals.ENVIRONMENT) {
-            case LOCAL : environmentPropertyFilePath = environmentPropertyFolderPath + "local.properties";
-                break;
-            case PROD : environmentPropertyFilePath = environmentPropertyFolderPath + "prod.properties";
-                break;
-        }
         BufferedReader reader;
 
         try {

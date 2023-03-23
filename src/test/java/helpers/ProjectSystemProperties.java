@@ -10,16 +10,23 @@ public class ProjectSystemProperties {
         String browser = System.getProperty("browser");
 
         if (browser == null || browser.equalsIgnoreCase("chrome")) return Browser.CHROME;
-        else if (browser.equalsIgnoreCase("chromeHeadless")) return Browser.CHROME_HEADLESS;
-        else throw new RuntimeException("Can't parse browser value: " + browser);
+        else if (browser.equalsIgnoreCase("chrome_headless")) return Browser.CHROME_HEADLESS;
+        else if (browser.equalsIgnoreCase("firefox")) return Browser.FIREFOX;
+        else throw new RuntimeException("Can't parse Browser value: " + browser);
+    }
+
+    public static String getBrowserVersion() {
+        String browserVersion = System.getProperty("browser_version");
+        if (browserVersion != null) return browserVersion;
+        return "latest";
     }
 
     public static Environment getEnvironment() {
-        String environment = System.getProperty("environment");
+        String environment = System.getProperty("env");
 
         if (environment == null || environment.equalsIgnoreCase("local")) return Environment.LOCAL;
-        else if (environment.equalsIgnoreCase("prod")) return Environment.PROD;
-        else throw new RuntimeException("Can't parse browser value: " + environment);
+        else if (environment.equalsIgnoreCase("selenoid")) return Environment.SELENOID;
+        else throw new RuntimeException("Can't parse Environment value: " + environment);
     }
 
     public static long getWait() {
