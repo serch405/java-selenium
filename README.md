@@ -32,13 +32,14 @@ Execute a specific test of class:
    ```sh
    mvn clean test -Dtest=class_name#test_name
    ```
-By default, tests use Chrome driver, but you can execute them using Chrome headless instead, just pass an additional argument: 
+By default, tests use Chrome driver, but you can execute them using Chrome headless or Firefox instead, just pass an additional argument: 
    ```sh
-   mvn clean test -Dbrowser=chromeHeadless
+   mvn clean test -Dbrowser=chrome_headless
+   mvn clean test -Dbrowser=fireFox
    ```
 By default, tests get executed locally, but you can execute them in an isolated environment (Selenoid), just pass an additional argument:
    ```sh
-   mvn clean test -Denvironment=local_selenoid
+   mvn clean test -Denv=selenoid
    ```
 You might need to use `install` instead of `test` if update of dependencies is required before the execution:
    ```sh
