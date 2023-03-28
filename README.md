@@ -9,6 +9,7 @@ This is a sample automation suite for Java `1.8`, Maven `3.8.6`, JUnit `5.9.0` a
 3. Make sure Java and Maven are accessible from any folder
 4. Install the latest Chrome and Firefox
 5. Install and run Docker and Selenoid following (see https://aerokube.com/selenoid/latest/#_getting_started)
+6. Launch Flask app (see https://github.com/serch405/flask-app/blob/main/README.md)
 
 
 ## Installation
