@@ -7,17 +7,19 @@ import java.net.MalformedURLException;
 import java.time.Duration;
 import java.util.Optional;
 import helpers.DriverFactory;
+import helpers.EmailUtils;
 import helpers.Globals;
-import org.junit.jupiter.api.extension.AfterEachCallback;
+import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
+import javax.mail.MessagingException;
 
 
-public class TestsWatcher implements TestWatcher, BeforeEachCallback, AfterEachCallback {
+public class TestsWatcher implements TestWatcher, BeforeAllCallback, BeforeEachCallback {
     static public String path;
 
     public TestsWatcher(String path) {
@@ -55,8 +57,14 @@ public class TestsWatcher implements TestWatcher, BeforeEachCallback, AfterEachC
                 out.write(((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.BYTES));
             }
         } catch (IOException | WebDriverException e) {
-            BaseTest.logger.debug("captureScreenshot exception");
+            BaseTest.logger.debug("captureScreenshot exception: " + e.getMessage());
         }
+    }
+
+    @Override
+    public void beforeAll(ExtensionContext extensionContext) throws MalformedURLException, MessagingException {
+        BaseTest.logger.debug("beforeAll");
+        BaseTest.emailOfUser = new EmailUtils(Globals.USER, EmailUtils.EmailFolder.INBOX);
     }
 
     @Override
@@ -65,12 +73,6 @@ public class TestsWatcher implements TestWatcher, BeforeEachCallback, AfterEachC
         BaseTest.driver = DriverFactory.createDriver(Globals.BROWSER, Globals.ENVIRONMENT);
         BaseTest.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         BaseTest.driver.get(Globals.URL);
-    }
-
-    @Override
-    public void afterEach(ExtensionContext extensionContext) {
-        BaseTest.logger.debug("afterEach");
-        BaseTest.driver.quit();
     }
 
 }
