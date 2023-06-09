@@ -2,6 +2,14 @@
 # About the project
 This is an automation framework for Java `1.8`, Maven `3.8.6`, JUnit `5.9.0` and Selenium WebDriver. It tests Flask app that should be launched separately. Tests can be executed locally or in an isolated environment (Selenoid)
 
+The framework follows the Fluent Page Object Model (POM) pattern, which promotes a streamlined and readable approach to test automation. The Fluent POM pattern enhances the traditional POM pattern by leveraging method chaining and fluent-style APIs, providing a more expressive and intuitive way to interact with web elements and perform actions.
+
+The `DriverFactory` class is responsible for creating instances of the Selenium WebDriver. It encapsulates the logic for creating different types of WebDriver instances based on the specified browser and environment parameters. The `createDriver` method in the `DriverFactory` class dynamically configures the WebDriver options and capabilities based on the provided parameters, allowing for flexible and efficient driver instantiation.
+
+The `DriverFactory` class does not enforce a Singleton pattern, which means that each invocation of the `createDriver` method will create a new `WebDriver` instance. This design choice allows for parallel test execution and supports scenarios where multiple driver instances are required. If Singleton behavior is desired, modifications to the `DriverFactory` class can be made to enforce a Singleton pattern.
+
+Overall, this automation framework provides a solid foundation for writing maintainable and scalable tests using Java, Maven, JUnit, and Selenium WebDriver. The combination of the Fluent POM pattern and the `DriverFactory` class simplifies test development and ensures efficient management of WebDriver instances.
+
 
 ## Prerequisites
 1. Install JDK `1.8`
