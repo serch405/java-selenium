@@ -29,7 +29,8 @@ public class EmailUtils {
     }
 
     public EmailUtils(UserModel user, EmailFolder emailFolder) throws MessagingException {
-        Session session = Session.getInstance(new Properties());
+        Properties properties = new Properties();
+        Session session = Session.getInstance(properties);
         Store store = session.getStore("imaps");
         store.connect(Globals.GMAIL_HOST, Globals.GMAIL_PORT, user.gmailEmail, user.gmailAppPassword);
         folder = store.getFolder(emailFolder.getText());
@@ -47,10 +48,10 @@ public class EmailUtils {
         }
         Message[] messages = folder.getMessages();
 
-        for (int i = 0; i < messages.length; i++) {
+        for (Message message : messages) {
 
-            if (!messages[i].isSet(Flags.Flag.SEEN)) {
-                messages[i].setFlag(Flags.Flag.SEEN, true);
+            if (!message.isSet(Flags.Flag.SEEN)) {
+                message.setFlag(Flags.Flag.SEEN, true);
             }
         }
     }
