@@ -20,11 +20,7 @@ import javax.mail.MessagingException;
 
 
 public class TestsWatcher implements TestWatcher, BeforeAllCallback, BeforeEachCallback {
-    static public String path;
-
-    public TestsWatcher(String path) {
-        this.path = path;
-    }
+    static public String path = "target/surefire-reports";
 
     @Override
     public void testAborted(ExtensionContext context, Throwable throwable) {
@@ -62,7 +58,7 @@ public class TestsWatcher implements TestWatcher, BeforeAllCallback, BeforeEachC
     }
 
     @Override
-    public void beforeAll(ExtensionContext extensionContext) throws MalformedURLException, MessagingException {
+    public void beforeAll(ExtensionContext extensionContext) throws MessagingException {
         BaseTest.logger.debug("beforeAll");
         BaseTest.emailOfUser = new EmailUtils(Globals.USER, EmailUtils.EmailFolder.INBOX);
     }
