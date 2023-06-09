@@ -26,8 +26,8 @@ public class LoginTest extends BaseTest {
     public void loginWithWrongPassword() throws MessagingException, IOException, InterruptedException {
         LoginPage loginPage = new HomePage(BaseTest.driver).openLoginPage();
         VerifyPage verifyPage = loginPage.login(Globals.USER.gmailEmail);
-        emailOfUser.setAllMessagesAsRead();
-        verifyPage.loginFailed("Password", emailOfUser.getCode());
+        BaseTest.emailOfUser.setAllMessagesAsRead();
+        verifyPage.loginFailed("Password", BaseTest.emailOfUser.getCode());
         Assertions.assertEquals("Invalid password or code", verifyPage.getMessageText().trim());
     }
 
@@ -44,8 +44,8 @@ public class LoginTest extends BaseTest {
     public void login() throws MessagingException, InterruptedException, IOException {
         LoginPage loginPage = new HomePage(BaseTest.driver).openLoginPage();
         VerifyPage verifyPage = loginPage.login(Globals.USER.gmailEmail);
-        emailOfUser.setAllMessagesAsRead();
-        DashboardPage dashboardPage = verifyPage.login(Globals.USER.password, emailOfUser.getCode());
+        BaseTest.emailOfUser.setAllMessagesAsRead();
+        DashboardPage dashboardPage = verifyPage.login(Globals.USER.password, BaseTest.emailOfUser.getCode());
         Assertions.assertTrue(dashboardPage.getPageTitle().contains("Dashboard"), dashboardPage.getPageTitle());
     }
 
